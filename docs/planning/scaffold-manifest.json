@@ -1,0 +1,532 @@
+[
+  {
+    "path": "SmartX.Shared/Telemetry/TelemetryPacket.cs",
+    "purpose": "Typed IoT telemetry envelope.",
+    "requirement": "G1"
+  },
+  {
+    "path": "SmartX.Shared/Telemetry/PowerReading.cs",
+    "purpose": "Power measurement value type for meaningful overloaded arithmetic.",
+    "requirement": "G2"
+  },
+  {
+    "path": "SmartX.Shared/Sensors/SensorProfile.cs",
+    "purpose": "Registered device metadata.",
+    "requirement": "F2"
+  },
+  {
+    "path": "SmartX.Shared/Sensors/SensorCategory.cs",
+    "purpose": "Supported IoT deployment categories.",
+    "requirement": "F2"
+  },
+  {
+    "path": "SmartX.Shared/Telemetry/TelemetryValueKind.cs",
+    "purpose": "Declared payload type for a sensor.",
+    "requirement": "G1"
+  },
+  {
+    "path": "SmartX.Shared/Deployment/DeploymentNode.cs",
+    "purpose": "Hierarchical facility, zone and node configuration.",
+    "requirement": "D2"
+  },
+  {
+    "path": "SmartX.Shared/Deployment/DeploymentNodeKind.cs",
+    "purpose": "Hierarchy level discriminator.",
+    "requirement": "D2"
+  },
+  {
+    "path": "SmartX.Shared/Validation/ValidationResult.cs",
+    "purpose": "Structured validation result returned to the client.",
+    "requirement": "F2/D2"
+  },
+  {
+    "path": "SmartX.Shared/Validation/ValidationIssue.cs",
+    "purpose": "One actionable validation failure.",
+    "requirement": "F2/D2"
+  },
+  {
+    "path": "SmartX.Shared/Attachments/SensorAttachment.cs",
+    "purpose": "Attachment metadata linked to one sensor.",
+    "requirement": "U1"
+  },
+  {
+    "path": "SmartX.Shared/Dashboard/DashboardSnapshot.cs",
+    "purpose": "One bounded dashboard refresh response.",
+    "requirement": "E1"
+  },
+  {
+    "path": "SmartX.Shared/Dashboard/SensorHealth.cs",
+    "purpose": "Sensor connectivity and signal condition.",
+    "requirement": "E1"
+  },
+  {
+    "path": "SmartX.Shared/Dashboard/TelemetryAlert.cs",
+    "purpose": "Actionable anomaly or disconnect alert.",
+    "requirement": "E1"
+  },
+  {
+    "path": "SmartX.Shared/Dashboard/ReportedIssue.cs",
+    "purpose": "User-reported troubleshooting issue.",
+    "requirement": "E2"
+  },
+  {
+    "path": "SmartX.Shared/Simulation/SimulationScenario.cs",
+    "purpose": "Reproducible load and fault scenario settings.",
+    "requirement": "S1"
+  },
+  {
+    "path": "SmartX.Shared/Contracts/Sensors/RegisterSensorRequest.cs",
+    "purpose": "Sensor registration API input.",
+    "requirement": "F2"
+  },
+  {
+    "path": "SmartX.Shared/Contracts/Sensors/UpdateSensorRequest.cs",
+    "purpose": "Sensor configuration API input.",
+    "requirement": "F2"
+  },
+  {
+    "path": "SmartX.Shared/Contracts/Telemetry/TelemetryBatchRequest.cs",
+    "purpose": "Typed batch ingestion request.",
+    "requirement": "D1"
+  },
+  {
+    "path": "SmartX.Shared/Contracts/Telemetry/IngestionResult.cs",
+    "purpose": "Ingestion acknowledgement and metrics.",
+    "requirement": "F3"
+  },
+  {
+    "path": "SmartX.Shared/Contracts/Telemetry/TelemetryHistoryResponse.cs",
+    "purpose": "Typed, bounded historical telemetry response.",
+    "requirement": "D1"
+  },
+  {
+    "path": "SmartX.Shared/Contracts/Telemetry/PowerComparisonRequest.cs",
+    "purpose": "Input for meter aggregation and delta demonstration.",
+    "requirement": "G2"
+  },
+  {
+    "path": "SmartX.Shared/Contracts/Telemetry/PowerComparisonResponse.cs",
+    "purpose": "Results of overloaded power arithmetic.",
+    "requirement": "G2"
+  },
+  {
+    "path": "SmartX.Shared/Contracts/Deployment/ValidateDeploymentRequest.cs",
+    "purpose": "Recursive deployment validation input.",
+    "requirement": "D2"
+  },
+  {
+    "path": "SmartX.Shared/Contracts/Dashboard/ReportIssueRequest.cs",
+    "purpose": "User-reported sensor issue input.",
+    "requirement": "E2"
+  },
+  {
+    "path": "SmartX.Shared/Contracts/Simulation/StartSimulationRequest.cs",
+    "purpose": "Simulation execution input.",
+    "requirement": "S1"
+  },
+  {
+    "path": "SmartX.Core/DataStructures/TelemetryBatchBuffer.cs",
+    "purpose": "Custom typed historical batch collection.",
+    "requirement": "D1/C1"
+  },
+  {
+    "path": "SmartX.Core/DataStructures/TelemetryStore.cs",
+    "purpose": "Typed ingestion state and retained sensor history.",
+    "requirement": "C1"
+  },
+  {
+    "path": "SmartX.Core/Validation/SensorProfileValidator.cs",
+    "purpose": "Registration and update validation.",
+    "requirement": "F2"
+  },
+  {
+    "path": "SmartX.Core/Validation/TelemetryPacketValidator.cs",
+    "purpose": "Type-preserving telemetry validation.",
+    "requirement": "F3"
+  },
+  {
+    "path": "SmartX.Core/Validation/DeploymentTreeValidator.cs",
+    "purpose": "Recursive configuration validation algorithm.",
+    "requirement": "D2"
+  },
+  {
+    "path": "SmartX.Core/Services/TelemetryIngestionService.cs",
+    "purpose": "Reusable typed ingestion orchestration.",
+    "requirement": "F3/D1"
+  },
+  {
+    "path": "SmartX.Core/Services/PowerAggregationService.cs",
+    "purpose": "Meaningful consumer of overloaded power operators.",
+    "requirement": "G2"
+  },
+  {
+    "path": "SmartX.Core/Services/AnomalyDetectionService.cs",
+    "purpose": "IoT anomaly evaluation for dashboard engagement.",
+    "requirement": "E1"
+  },
+  {
+    "path": "SmartX.Core/Services/SensorHealthService.cs",
+    "purpose": "Connection health based on expected reporting intervals.",
+    "requirement": "E1"
+  },
+  {
+    "path": "SmartX.Core/Simulation/TelemetrySeedGenerator.cs",
+    "purpose": "Large deterministic mock telemetry source.",
+    "requirement": "S1"
+  },
+  {
+    "path": "SmartX.Core/Abstractions/ISensorRepository.cs",
+    "purpose": "Sensor metadata storage boundary.",
+    "requirement": "ARCH"
+  },
+  {
+    "path": "SmartX.Core/Abstractions/IDeploymentRepository.cs",
+    "purpose": "Deployment tree storage boundary.",
+    "requirement": "ARCH"
+  },
+  {
+    "path": "SmartX.Core/Abstractions/IAttachmentStorage.cs",
+    "purpose": "Streaming encrypted attachment storage boundary.",
+    "requirement": "ARCH"
+  },
+  {
+    "path": "SmartX.Core/Abstractions/IAttachmentRepository.cs",
+    "purpose": "Sensor-linked attachment metadata boundary.",
+    "requirement": "ARCH"
+  },
+  {
+    "path": "SmartX.Core/Abstractions/IDashboardRepository.cs",
+    "purpose": "Alert and user issue state boundary.",
+    "requirement": "ARCH"
+  },
+  {
+    "path": "SmartXWebApi/Controllers/SensorsController.cs",
+    "purpose": "Sensor profile endpoints.",
+    "requirement": "F2"
+  },
+  {
+    "path": "SmartXWebApi/Controllers/TelemetryController.cs",
+    "purpose": "Strongly typed telemetry endpoints.",
+    "requirement": "F3/G1"
+  },
+  {
+    "path": "SmartXWebApi/Controllers/DeploymentController.cs",
+    "purpose": "Deployment configuration endpoints.",
+    "requirement": "D2"
+  },
+  {
+    "path": "SmartXWebApi/Controllers/AttachmentsController.cs",
+    "purpose": "Sensor-specific multipart upload and download endpoints.",
+    "requirement": "U1"
+  },
+  {
+    "path": "SmartXWebApi/Controllers/DashboardController.cs",
+    "purpose": "Live dashboard and troubleshooting endpoints.",
+    "requirement": "E1/E2"
+  },
+  {
+    "path": "SmartXWebApi/Controllers/SimulationController.cs",
+    "purpose": "Simulation lifecycle endpoints.",
+    "requirement": "S1"
+  },
+  {
+    "path": "SmartXWebApi/Controllers/HealthController.cs",
+    "purpose": "Backend availability endpoint.",
+    "requirement": "F1"
+  },
+  {
+    "path": "SmartXWebApi/Repositories/InMemorySensorRepository.cs",
+    "purpose": "In-memory sensor registry.",
+    "requirement": "F2"
+  },
+  {
+    "path": "SmartXWebApi/Repositories/InMemoryDeploymentRepository.cs",
+    "purpose": "In-memory validated deployment hierarchy.",
+    "requirement": "D2"
+  },
+  {
+    "path": "SmartXWebApi/Repositories/InMemoryAttachmentRepository.cs",
+    "purpose": "In-memory sensor attachment index.",
+    "requirement": "U1"
+  },
+  {
+    "path": "SmartXWebApi/Repositories/InMemoryDashboardRepository.cs",
+    "purpose": "Bounded alert and issue lists.",
+    "requirement": "E2"
+  },
+  {
+    "path": "SmartXWebApi/Storage/EncryptedAttachmentStorage.cs",
+    "purpose": "Encrypted attachment bytes outside the public web root.",
+    "requirement": "U1"
+  },
+  {
+    "path": "SmartXWebApi/Storage/AttachmentKeyProvider.cs",
+    "purpose": "Attachment encryption key configuration boundary.",
+    "requirement": "U1"
+  },
+  {
+    "path": "SmartXWebApi/Validation/AttachmentUploadValidator.cs",
+    "purpose": "File upload policy validation.",
+    "requirement": "U1"
+  },
+  {
+    "path": "SmartXWebApi/BackgroundServices/SimulationBackgroundService.cs",
+    "purpose": "Cancellable paced telemetry producer.",
+    "requirement": "S1"
+  },
+  {
+    "path": "SmartXWebApi/BackgroundServices/SensorHealthBackgroundService.cs",
+    "purpose": "Periodic dropout detection.",
+    "requirement": "E1"
+  },
+  {
+    "path": "SmartXWebApi/Configuration/IngestionOptions.cs",
+    "purpose": "Bounded ingestion configuration.",
+    "requirement": "C1"
+  },
+  {
+    "path": "SmartXWebApi/Configuration/AttachmentOptions.cs",
+    "purpose": "Upload and encryption storage settings.",
+    "requirement": "U1"
+  },
+  {
+    "path": "SmartXWebApi/Configuration/SimulationOptions.cs",
+    "purpose": "Deterministic simulation defaults.",
+    "requirement": "S1"
+  },
+  {
+    "path": "SmartXWebApi/Configuration/DashboardOptions.cs",
+    "purpose": "Engagement and dropout settings.",
+    "requirement": "E1"
+  },
+  {
+    "path": "SmartXWebApi/Extensions/ServiceCollectionExtensions.cs",
+    "purpose": "API dependency registration location.",
+    "requirement": "ARCH"
+  },
+  {
+    "path": "SmartXWebApi/ErrorHandling/ApiExceptionHandler.cs",
+    "purpose": "Consistent safe API error responses.",
+    "requirement": "F1"
+  },
+  {
+    "path": "SmartXMVC/Controllers/DashboardController.cs",
+    "purpose": "Telemetry dashboard MVC entry point.",
+    "requirement": "E1"
+  },
+  {
+    "path": "SmartXMVC/Controllers/SensorsController.cs",
+    "purpose": "Sensor registration and details MVC flow.",
+    "requirement": "F2"
+  },
+  {
+    "path": "SmartXMVC/Controllers/TelemetryController.cs",
+    "purpose": "Typed ingestion and history MVC flow.",
+    "requirement": "F3"
+  },
+  {
+    "path": "SmartXMVC/Controllers/DeploymentController.cs",
+    "purpose": "Deployment tree and recursive validation MVC flow.",
+    "requirement": "D2"
+  },
+  {
+    "path": "SmartXMVC/Controllers/AttachmentsController.cs",
+    "purpose": "Attachment MVC upload/download proxy.",
+    "requirement": "U1"
+  },
+  {
+    "path": "SmartXMVC/Controllers/IssuesController.cs",
+    "purpose": "User issue reporting MVC flow.",
+    "requirement": "E2"
+  },
+  {
+    "path": "SmartXMVC/Services/ISmartXApiClient.cs",
+    "purpose": "Typed asynchronous MVC-to-API contract.",
+    "requirement": "F1"
+  },
+  {
+    "path": "SmartXMVC/Services/SmartXApiClient.cs",
+    "purpose": "HTTP implementation of the MVC API boundary.",
+    "requirement": "F1"
+  },
+  {
+    "path": "SmartXMVC/Configuration/ApiClientOptions.cs",
+    "purpose": "Backend address and request timeout settings.",
+    "requirement": "F1"
+  },
+  {
+    "path": "SmartXMVC/Extensions/ServiceCollectionExtensions.cs",
+    "purpose": "MVC API client registration location.",
+    "requirement": "F1"
+  },
+  {
+    "path": "SmartXMVC/Models/ViewModels/GatewayViewModel.cs",
+    "purpose": "Three-pillar landing page state.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Models/ViewModels/DashboardViewModel.cs",
+    "purpose": "Live telemetry and investigation view state.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Models/ViewModels/SensorListViewModel.cs",
+    "purpose": "Sensor list view state.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Models/ViewModels/SensorFormViewModel.cs",
+    "purpose": "Sensor registration/edit form state.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Models/ViewModels/SensorDetailsViewModel.cs",
+    "purpose": "Sensor profile and attachments view state.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Models/ViewModels/TelemetryViewModel.cs",
+    "purpose": "Simulation and manual typed ingestion form state.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Models/ViewModels/TelemetryHistoryViewModel.cs",
+    "purpose": "Historical batch inspection state.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Models/ViewModels/DeploymentViewModel.cs",
+    "purpose": "Hierarchy validation display state.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Models/ViewModels/AttachmentUploadViewModel.cs",
+    "purpose": "Sensor attachment form state.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Models/ViewModels/ReportedIssueViewModel.cs",
+    "purpose": "Troubleshooting issue form state.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Dashboard/Index.cshtml",
+    "purpose": "Live IoT overview, typed trend panels, health states and alert investigation.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Sensors/Index.cshtml",
+    "purpose": "Sensor registry with category/location filters.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Sensors/Create.cshtml",
+    "purpose": "Register device with identifier, deployment location and category.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Sensors/Edit.cshtml",
+    "purpose": "Edit validated sensor configuration.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Sensors/Details.cshtml",
+    "purpose": "Device profile, live health, readings, attached files and reported issues.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Sensors/_SensorForm.cshtml",
+    "purpose": "Shared registration/edit fields and validation feedback.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Telemetry/Index.cshtml",
+    "purpose": "Typed ingestion and reproducible simulation controls.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Telemetry/History.cshtml",
+    "purpose": "Sequential historical batches and list transfer; power aggregation/delta panel.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Deployment/Index.cshtml",
+    "purpose": "Nested deployment configuration and recursive validation results.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Deployment/_DeploymentNode.cshtml",
+    "purpose": "Display hierarchy node; render only depth-validated data.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Attachments/_UploadForm.cshtml",
+    "purpose": "Sensor-specific multipart streaming upload form.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Attachments/_AttachmentList.cshtml",
+    "purpose": "Sensor file metadata and download controls.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Issues/_ReportIssueForm.cshtml",
+    "purpose": "User-reported issue capture.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Shared/_GatewayPillars.cshtml",
+    "purpose": "Three named pillars; Part 2 and final PoE disabled.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Shared/_TelemetryChart.cshtml",
+    "purpose": "Typed, bounded trend data with anomaly context.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Shared/_AlertPanel.cshtml",
+    "purpose": "Actionable alerts, acknowledgement and sensor drill-down.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Shared/_SensorHealthBadge.cshtml",
+    "purpose": "Text/icon/colour health indication; do not rely on colour alone.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Shared/_ApiStatus.cshtml",
+    "purpose": "Backend connection, loading and retry feedback.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/Views/Shared/_Notification.cshtml",
+    "purpose": "Accessible success, validation and failure feedback.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/wwwroot/js/dashboard.js",
+    "purpose": "Cancellable bounded polling through MVC; charts, anomaly context and disconnect feedback.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/wwwroot/js/sensors.js",
+    "purpose": "Client-side registration validation and dependent selections.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/wwwroot/js/telemetry.js",
+    "purpose": "Typed payload forms and simulation lifecycle controls.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/wwwroot/js/attachments.js",
+    "purpose": "File validation, upload progress, completion/error/cancel feedback.",
+    "requirement": "UI"
+  },
+  {
+    "path": "SmartXMVC/wwwroot/js/deployment.js",
+    "purpose": "Hierarchy expansion and path-specific recursive validation results.",
+    "requirement": "UI"
+  }
+]

@@ -1,0 +1,1 @@
+PASS: HTTPS MVC-to-API dashboard request using a trusted development certificate. Chain and hostname validation enabled; no certificate-validation bypass.

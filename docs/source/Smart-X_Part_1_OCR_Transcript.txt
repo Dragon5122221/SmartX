@@ -1,0 +1,628 @@
+OCR TRANSCRIPT
+Smart-X IoT Mesh Ecosystem — Part 1 and PoE Marking Rubrics
+
+Source images organised into original document order: pages 3–6 and 14–20 of 29.
+Original wording, headings, bullets, numbering, marks, table categories, and contextual notes have been retained.
+
+
+================================================================================
+PAGE 3 OF 29
+================================================================================
+
+26                                                                    2026
+
+Portfolio of Evidence (PoE) — Background: The Smart-X IoT Mesh Ecosystem
+
+Scenario
+
+With the explosive growth of edge computing and automation, a local South African technology
+venture is developing Smart-X, a hybrid Internet of Things (IoT) ecosystem designed to monitor
+and manage distributed environments (such as hydroponic farms, automated real estate utility
+trackers, and smart grid installations).
+
+The infrastructure relies on thousands of microcontrollers (like ESP32 chips) publishing constant,
+multi-typed telemetry data (floats for soil moisture, integers for power wattage, booleans for
+valve states) back to a central gateway. To process, validate, and optimise this high-throughput
+data stream, the engineering team requires an advanced application suite.
+
+NB: Please make sure to do full research on the topic on IOT, because marks will not be awarded
+to a general application
+
+Note on Hardware and Data Seeding:
+
+For the primary purposes of this assessment, this environment is a simulation. You will be
+expected to heavily seed your application with mock telemetry data to prove your data structures
+work efficiently under load. However, you are more than welcome to include real-world devices
+and live sensor data if you have access to the physical hardware!
+
+Architecture Flexibility and Freedom of Choice
+
+Unlike rigid legacy systems, the architecture must be modernised. You are not restricted to
+standard desktop applications. Instead, you have the architectural freedom to choose their own
+frontend tech stack while leveraging .NET 10 as the backend backbone.
+
+You may choose to build your solution using any of the following combinations:
+
+• Web-First: An ASP.NET Core Minimal API backend paired with a Blazor WebAssembly,
+  React, or Vue frontend.
+
+• Cross-Platform Mobile/Desktop: A .NET MAUI or Avalonia UI application interacting with a
+  self-hosted local Web API.
+
+• Traditional Desktop: A WPF or Windows Forms UI communicating seamlessly with an
+  internal or external processing engine.
+
+© The Independent Institute of Education (Pty) Ltd 2026
+
+
+================================================================================
+PAGE 4 OF 29
+================================================================================
+
+26                                                                    2026
+
+Instructions
+
+Complete the tasks below to establish the core data ingestion engine of the Smart-X ecosystem.
+
+Part 1 — Smart-X Data Ingestion and Validation Gateway                       (Marks: 100)
+
+Learning Units: LU1 – LU2
+
+This part has two tasks – Research (20 marks) and Implementation (80 marks).
+
+Task 1: RESEARCH                                                           (Marks: 20)
+
+High-throughput IoT systems suffer significantly from user drop-off if the configuration and
+debugging consoles are obtuse or overly complex. Conduct online research on developer-centric
+user engagement strategies (e.g. real-time visual telemetry feedback, proactive alert
+gamification, or simplified onboarding flows) suitable for a technical management interface. Make
+sure to use journal articles.
+
+In a Word document, write a report providing:
+
+1. List five user engagement or dashboard interactivity strategies considered during your
+   research to make telemetry data clear and actionable.
+
+2. Provide a 500-word explanation and justification of your chosen dashboard engagement
+   strategy, specifically evaluating how it helps users easily spot and troubleshoot anomalous
+   data spikes or sensor disconnects.
+
+Formatting requirements:
+
+o 1.5-line spacing. Arial or Times New Roman font (11 or 12-point).
+o Follow proper academic referencing standards.
+o In a report format with max 2-3 pages
+o Include diagrams to help explain any concepts
+
+Remember to reference the sources used.
+
+© The Independent Institute of Education (Pty) Ltd 2026
+
+
+================================================================================
+PAGE 5 OF 29
+================================================================================
+
+26                                                                    2026
+
+Task 2: IMPLEMENTATION (.NET Architecture and API Integration)              (Marks: 80)
+
+You are tasked with building the ingestion API and client-facing configuration dashboard for the
+Smart-X system. The application must process varied sensor data types efficiently without type-
+coercion overhead.
+
+Functional Requirements
+
+• Startup Interface: The application gateway must display a landing page or menu offering
+  three architectural pillars:
+
+  o Sensor Data Ingestion and Telemetry (To be implemented in this part).
+  o Real-Time Command Stream and History (Disabled – to be implemented in Part 2).
+  o Network Topology and Mesh Routing (Disabled – to be implemented in the final
+    PoE).
+
+• API Integration Layer: Implement a .NET-based Web API (e.g. ASP.NET Core Minimal APIs or
+  Controllers) to act as the primary receiver of telemetry data. The frontend dashboard must
+  communicate with this API layer to push and retrieve data.
+
+• Sensor Payload Management: Users must be able to simulate or attach custom sensor
+  registration records, including:
+
+  o Device MAC Address / Unique Identifier.
+  o Sensor Deployment Location (e.g. Room, Zone, Node ID).
+  o Sensor Category Selection (e.g. Environmental, Power Consumption, Actuator).
+
+• Media/Log Attachment: Allow users to attach physical device configuration files,
+  deployment photos, or hardware log files directly to a specific sensor profile via an
+  optimised file upload mechanism (OpenFileDialog or an API-based multipart file uploader).
+
+• Dynamic Engagement Feature: Integrate your chosen research engagement strategy.
+  Remember to be unique, not just a progress bar.
+
+Technical and Language Requirements
+
+To ensure optimal performance on resource-constrained gateway devices, you must explicitly
+integrate the following advanced object-oriented C# concepts:
+
+• Generics: Design a reusable generic wrapper class, TelemetryPacket<T>, to handle
+  disparate incoming data structures uniformly (e.g. passing a float for temperature, an int for
+  power metrics, or a bool for smart switch triggers) without resorting to expensive
+  boxing/unboxing operations.
+
+© The Independent Institute of Education (Pty) Ltd 2026
+
+
+================================================================================
+PAGE 6 OF 29
+================================================================================
+
+26                                                                    2026
+
+• Operator Overloading: Overload operators (such as +, -, or logical comparison operators)
+  on your sensor data structures to allow direct aggregation or delta comparisons of sensor
+  values in code (e.g. calculating the aggregate load of two smart meters: Meter3 = Meter1
+  + Meter2).
+
+• Advanced Arrays and Lists: Utilise multi-dimensional or jagged arrays to manage
+  sequential historical batches of raw telemetry arrays before transferring them into
+  optimised Collections (List<T>).
+
+• Recursion: Write a recursive validation algorithm to parse nested device deployment
+  trees or multi-tier configuration profiles (e.g. validating that a node is safely configured
+  within Sub-Zone B -> Zone 1 -> Facility A).
+
+Note: If the code does not compile and run, across both the frontend client and backend API
+layers, no marks will be awarded for any application functionality.
+
+Deliverables for Part 1
+
+• A Word document containing your research paper.
+
+• Full source code directory containing the API and client application. All stored on GitHub. A
+  5% penalty if no GitHub is used with an appropriate number of commits. Each project
+  should be over 20 commits at least.
+
+• Include any Docker files if included (FYI, it is suggested to use docker like you did in
+  PROG 7311)
+
+• A comprehensive README.md file providing explicit setup instructions on how to restore
+  dependencies, compile the project, boot the backend API, and run the client user interface.
+
+• YouTube Video demo or Presentation, your lecture will advise on this. Please consult the
+  lecturer of the module on your campus.
+
+Important! You will build on this application in Part 2 and the PoE. So, keep a copy of your code in
+a safe place!
+
+                                                              [Total MARKS: 100]
+
+© The Independent Institute of Education (Pty) Ltd 2026
+
+
+================================================================================
+PAGE 14 OF 29
+================================================================================
+
+25; 26                                                                 2026
+
+Appendix A     - PoE Marking Rubrics
+Assessment Sheet (Marking Rubric)
+
+Please note: Tear off this section and attach it to your work when you submit it/ If this is an online submission, then this information needs to be included
+in the online submission.
+
+MODULE NAME:                                                        MODULE CODE:
+PROGRAMMING 3B                                                      PROG7312/w
+ADVANCED APPLICATION DEVELOPMENT                                   AAPD7112/w
+
+STUDENT NAME:   ______________________________________________________________
+STUDENT NUMBER: ______________________________________________________________
+
+PART 1 - Task 1
+
+TABLE COLUMN HEADINGS:
+Marking Criteria | Does not meet the required standard | Meets the required standard |
+Partially exceeds the required standard | Greatly exceeds the required standard | Feedback
+
+--------------------------------------------------------------------------------
+MARKING CRITERION:
+Identification of IoT Dashboard User Engagement Strategies [5 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0-1 Mark
+• No user engagement strategies are listed, or they are entirely unrelated to software or
+  dashboards.
+
+MEETS THE REQUIRED STANDARD — 2-3 Marks
+• Only 1 or 2 dashboard engagement strategies are listed, with limited relevance to tracking
+  telemetry or IoT configurations.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 4 Marks
+• 3 or 4 relevant strategies are listed, demonstrating a solid understanding of user dashboard
+  design.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 5 Marks
+• 5 highly relevant, well-defined dashboard engagement strategies are listed, specifically
+  tailored to technical IoT systems.
+
+FEEDBACK:
+
+
+© The Independent Institute of Education (Pty) Ltd 2026
+
+
+================================================================================
+PAGE 15 OF 29
+================================================================================
+
+25; 26                                                                 2026
+
+TABLE COLUMN HEADINGS:
+Research: | Does not meet the required standard | Meets the required standard |
+Partially exceeds the required standard | Greatly exceeds the required standard | Feedback
+
+--------------------------------------------------------------------------------
+RESEARCH CRITERION:
+Explanation planning and Justification of Chosen Strategy [10 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0-3 Marks
+• No explanation or justification is provided, or the logic is entirely flawed.
+
+MEETS THE REQUIRED STANDARD — 4-6 Marks
+• Some details are provided, but the explanation lacks depth or fails to explain how it helps
+  users catch telemetry anomalies or sensor dropouts.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 7-8 Marks
+• A clear 500-word explanation and planning is provided, outlining the chosen strategy and
+  justifying its use for analysing real-time data flows.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 9-10 Marks
+• An exceptional 500-word explanation and planning is provided, seamlessly connecting the
+  engagement strategy to minimising troubleshooting times for complex IoT systems.
+
+FEEDBACK:
+
+
+--------------------------------------------------------------------------------
+RESEARCH CRITERION:
+Referencing and Citations [5 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0 Mark
+• No proper referencing is provided.
+
+MEETS THE REQUIRED STANDARD — 1-2 Marks
+• Referencing is present but lacks accuracy or proper citation format.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 3-4 Marks
+• References are mostly accurate, with minor issues in citation format.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 5 Marks
+• Proper referencing and citations are used, following the given article and other relevant
+  sources.
+
+FEEDBACK:
+
+
+© The Independent Institute of Education (Pty) Ltd 2026
+
+
+================================================================================
+PAGE 16 OF 29
+================================================================================
+
+25; 26                                                                 2026
+
+PART 1 - Task 2
+
+TABLE COLUMN HEADINGS:
+Does not meet the required standard | Meets the required standard |
+Partially exceeds the required standard | Greatly exceeds the required standard | Feedback
+
+--------------------------------------------------------------------------------
+MARKING CRITERION:
+Gateway Startup Layout and API Integration making use of the data structure [10 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0-3 Marks
+• Startup menu is non-functional or missing entirely. No connection to a .NET API backend.
+
+MEETS THE REQUIRED STANDARD — 4-6 Marks
+• Gateway layout is present, but communication with the .NET API features severe routing bugs or
+  synchronous blocking.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 7-8 Marks
+• Clean architectural menu. The application communicates successfully with the .NET API backend
+  with minor inefficiencies such as incorrect implementation of the connection string.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 9-10 Marks
+• Flawless startup experience. Asynchronous .NET API communication is clean, highly responsive,
+  and robust.
+
+FEEDBACK:
+
+
+PART 1 - Task 2
+
+--------------------------------------------------------------------------------
+MARKING CRITERION:
+App Functionality: Sensor Telemetry Data Ingestion and UI [10 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0-3 Marks
+• The sensor registration or data ingestion page is completely broken or omitted.
+
+MEETS THE REQUIRED STANDARD — 4-6 Marks
+• Ingestion page is present, but input forms (MAC address, zone location, category) contain notable
+  data validation bugs.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 7-8 Marks
+• Ingestion functionality is solid, allowing successful submission of various device records with
+  minor UI quirks and minor validation.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 9-10 Marks
+• Exceptional ingestion module. Robust client-side validation paired with immediate, accurate
+  backend API parsing.
+
+FEEDBACK:
+
+
+© The Independent Institute of Education (Pty) Ltd 2026
+
+
+================================================================================
+PAGE 17 OF 29
+================================================================================
+
+25; 26                                                                 2026
+
+PART 1 - Task 2
+
+TABLE COLUMN HEADINGS:
+Does not meet the required standard | Meets the required standard |
+Partially exceeds the required standard | Greatly exceeds the required standard | Feedback
+
+--------------------------------------------------------------------------------
+MARKING CRITERION:
+Advanced OOP: Generics and Overloading [10 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0-3 Marks
+• TelemetryPacket<T> generic wrapper or operator overloading is missing.
+
+MEETS THE REQUIRED STANDARD — 4-6 Marks
+• Implemented but flawed; relies on expensive boxing/unboxing or implements overloading without
+  structural purpose.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 7-8 Marks
+• Generics are used correctly to handle disparate structures; operator overloading successfully
+  aggregates sensor values.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 9-10 Marks
+• Brilliant application of generic type parameters and creative operator overloading for direct,
+  high-performance data manipulation.
+
+FEEDBACK:
+
+
+PART 1 - Task 2
+
+--------------------------------------------------------------------------------
+MARKING CRITERION:
+Data Handling: Arrays and Recursion [10 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0-3 Marks
+• Jagged/multi-dimensional arrays or recursion are absent or cause application stack overflows.
+
+MEETS THE REQUIRED STANDARD — 4-6 Marks
+• Data structures are present but used poorly; recursive configuration validation lacks a clear
+  base case or breaks under depth.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 7-8 Marks
+• Sequential historical telemetry data is successfully stored in jagged/multi-dimensional arrays;
+  recursive node validation works.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 9-10 Marks
+• Masterful optimisation of memory layouts; recursive validation algorithms are elegant, perfectly
+  handling deep network hierarchies.
+
+FEEDBACK:
+
+
+© The Independent Institute of Education (Pty) Ltd 2026
+
+
+================================================================================
+PAGE 18 OF 29
+================================================================================
+
+25; 26                                                                 2026
+
+PART 1 - Task 2
+
+TABLE COLUMN HEADINGS:
+Does not meet the required standard | Meets the required standard |
+Partially exceeds the required standard | Greatly exceeds the required standard | Feedback
+
+--------------------------------------------------------------------------------
+MARKING CRITERION:
+Media/Log File Upload Attachment [10 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0-3 Marks
+• File attachment feature is completely non-functional or omitted.
+
+MEETS THE REQUIRED STANDARD — 4-6 Marks
+• File uploader is present but exhibits notable bugs when saving configs or uploading images to
+  the backend API.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 7-8 Marks
+• Users can attach logs or photos to sensor profiles via an optimised file uploader with minor
+  layout flaws.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 9-10 Marks
+• Flawless media/log upload mechanism handling multipart streams efficiently without degrading
+  backend performance and full encryption included.
+
+FEEDBACK:
+
+
+PART 1 - Task 2
+
+--------------------------------------------------------------------------------
+MARKING CRITERION:
+Dynamic Dashboard Engagement Integration [10 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0-3 Marks
+• A list is not used at all to store user-reported issues.
+
+MEETS THE REQUIRED STANDARD — 4-6 Marks
+• Named strategy is present but non-dynamic, or bugs impact its effectiveness (e.g. progress bars
+  don't update dynamically).
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 7-8 Marks
+• Engagement strategy is integrated well, dynamically reflecting real-time system states or
+  notifications to the user.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 9-10 Marks
+• Engagement strategy is integrated seamlessly, dramatically enhancing dashboard readability and
+  system interactivity.
+
+FEEDBACK:
+
+
+© The Independent Institute of Education (Pty) Ltd 2026
+
+
+================================================================================
+PAGE 19 OF 29
+================================================================================
+
+25; 26                                                                 2026
+
+PART 1 - Task 2
+
+TABLE COLUMN HEADINGS:
+Does not meet the required standard | Meets the required standard |
+Partially exceeds the required standard | Greatly exceeds the required standard | Feedback
+
+--------------------------------------------------------------------------------
+MARKING CRITERION:
+User Interface Design Considerations [10 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0-3 Marks
+• The application layout is visually broken, lacks clear typography, and fails to handle resizing.
+
+MEETS THE REQUIRED STANDARD — 4-6 Marks
+• UI has major inconsistencies in colour schemes, lacks descriptive labels, or has slow feedback
+  loops.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 7-8 Marks
+• Interface is mostly consistent and clear, accommodating standard resolutions with clean feedback
+  alerts.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 9-10 Marks
+• Visually outstanding, intuitive UI design that scales fluidly across device sizes, keeping users
+  informed via crisp feedback loops.
+
+FEEDBACK:
+
+
+PART 1 - Task 2
+
+--------------------------------------------------------------------------------
+MARKING CRITERION:
+Collections Optimisation and Lists [5 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0 Mark
+• Generic Collections or Lists are not used to organise ingestion pipelines.
+
+MEETS THE REQUIRED STANDARD — 1-2 Marks
+• Lists are used but combined haphazardly with legacy data structures, resulting in severe
+  processing bottlenecks.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 3-4 Marks
+• System effectively shifts data from raw arrays into generic List<T> formats with minor
+  inefficiencies.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 5 Marks
+• Optimal, consistent usage of collections throughout the pipeline to manage and track ingestion
+  states elegantly. The collection is a custom data structure.
+
+FEEDBACK:
+
+
+© The Independent Institute of Education (Pty) Ltd 2026
+
+
+================================================================================
+PAGE 20 OF 29
+================================================================================
+
+25; 26                                                                 2026
+
+PART 1 - Task 2
+
+TABLE COLUMN HEADINGS:
+Does not meet the required standard | Meets the required standard |
+Partially exceeds the required standard | Greatly exceeds the required standard | Feedback
+
+--------------------------------------------------------------------------------
+MARKING CRITERION:
+Documentation and Readme Quality [5 Marks]
+--------------------------------------------------------------------------------
+
+DOES NOT MEET THE REQUIRED STANDARD — 0 Mark
+• No readme file is submitted.
+
+MEETS THE REQUIRED STANDARD — 1-2 Marks
+• README contains minimal info, making it exceptionally difficult to configure, restore
+  dependencies, or run the multi-layered stack. Little to no Markdown included.
+
+PARTIALLY EXCEEDS THE REQUIRED STANDARD — 3-4 Marks
+• Sufficient readme provided outlining steps to launch the API and client frontend, though missing
+  edge-case details.
+
+GREATLY EXCEEDS THE REQUIRED STANDARD — 5 Marks
+• Exceptional README.md, live or video demo giving precise, step-by-step commands to restore,
+  build, boot the .NET API, and deploy the client app.
+
+FEEDBACK:
+
+
+--------------------------------------------------------------------------------
+DEDUCTION CRITERION:
+Incorrect GitHub used or not GitHub Used [-5 Marks]
+--------------------------------------------------------------------------------
+
+-5 MARKS
+• No GitHub repository submitted.
+
+-4 OR -3 MARKS
+• GitHub repository submitted with limited commit history and limited evidence of collaboration.
+• No README.md file included.
+
+-2 OR -1 MARKS
+• GitHub repository submitted with good commit history (25 commits).
+• Evidence of collaboration (multiple contributors).
+• README.md file included but not formatted in Markdown.
+
+NO DEDUCTION
+• GitHub repository submitted with excellent commit history (25+ commits and well-structured
+  commit messages).
+• Evidence of collaboration (multiple contributors).
+• README.md file included and perfectly formatted in Markdown.
+
+FEEDBACK:
+
+
+PART 1 TOTAL                                                               /100
+
+© The Independent Institute of Education (Pty) Ltd 2026
+

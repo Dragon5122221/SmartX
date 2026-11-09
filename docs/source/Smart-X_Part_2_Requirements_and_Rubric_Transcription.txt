@@ -1,0 +1,196 @@
+SMART-X — PART 2 REQUIREMENTS AND MARKING RUBRIC
+Transcription from six supplied photographs, arranged in logical document order.
+The marking rubric is reformatted into labelled assessment bands to preserve the meaning of the original table.
+
+========================================================================
+PART 2 — Smart-X Real-Time Processing and Device Management [Marks: 100]
+Learning Units: LU1 – LU4
+========================================================================
+
+Introduction:
+
+In Part 2, the Smart-X IoT ecosystem evolves from a static data ingestion gateway into a dynamic, real-time processing engine. Managing a live network of ESP32 microcontrollers, smart plugs, and environmental sensors requires highly optimised data handling to prevent bottlenecks. Remember, you can simulate all this data, but it has to hit the API like it was a device. You will implement advanced data structures to manage incoming telemetry queues, store device states, and predict system anomalies.
+
+Develop the Application Logic and UI Integration
+
+Main Menu and Navigation (30 Marks)
+
+• Update your frontend application (Web, MAUI, or Desktop) with an organised navigation menu presenting the following active modules:
+  o Sensor Data Ingestion and Telemetry (Implemented in Part 1).
+  o Real-Time Command Stream and History (To be implemented in this part).
+  o Network Topology and Mesh Routing (To be implemented in the final PoE).
+• Ensure seamless, asynchronous navigation between these views without losing application state or crashing the API backend.
+
+Real-Time Command Stream and History Page (70 Marks)
+
+• Upon accessing the “Real-Time Command Stream,” present a highly responsive dashboard that visualises incoming sensor data and allows the user to issue manual override commands (e.g. triggering a water pump, toggling a smart relay).
+• Implement a search or filter functionality allowing users to efficiently find specific devices based on their operational categories or active alert states.
+• Utilise advanced data structures to optimise how the API backend processes and stores this volatile data.
+
+========================================================================
+Technical Requirements for Real-Time Command Stream (40 Marks)
+========================================================================
+
+Mark allocation breakdown with suggestions of data structures that could be used:
+
+Stacks, Queues, Priority Queues (15 Marks)
+
+• Message Queues: Implement a Queue<T> to handle the standard First-In-First-Out (FIFO) processing of incoming telemetry packets hitting the API.
+• Priority Queues: Implement a PriorityQueue for critical alerts. For example, a severe power spike or a critical moisture drop in a hydroponics node must bypass the standard queue and be processed immediately.
+• Stacks: Implement a Stack<T> to manage a history of manual override commands sent to devices. This will serve as an “Undo” feature, allowing operators to quickly revert the last issued command (e.g. reverting a “shut down all valves” action).
+
+Hash Tables, Dictionaries, Sorted Dictionaries (15 Marks)
+
+• Dictionaries: Utilise a Dictionary<TKey, TValue> to store the live, registered devices. Use the device MAC address or a unique node identifier as the key for instantaneous O(1) lookups when a new telemetry packet arrives.
+• Sorted Dictionaries: Use a SortedDictionary to organise and display historical sensor logs sequentially by timestamp, ensuring the frontend dashboard can render timeline graphs efficiently.
+
+Sets (10 Marks)
+
+• Hash Sets: Incorporate a HashSet<T> to maintain a list of currently active, unique error states or disconnected nodes. Because sets only store unique elements, this efficiently prevents the system from processing duplicate disconnect alerts for the same sensor.
+
+Predictive Action and Recommendation Engine (30 Marks)
+
+Instead of standard event recommendations, implement an Automated Action Engine based on historical sensor queries and data patterns.
+
+• Pattern Analysis: Analyse the history of user searches or manually triggered commands (e.g. if a user frequently searches for “Pump A” right after “Moisture Sensor B” drops below 20%).
+• Algorithmic Suggestion: Use an appropriate algorithm or data structure to proactively suggest related commands or highlight specific potentially problematic devices (faults, out of range readings, etc.) on the dashboard before the user searches for them.
+• Presentation: Present these predictive recommendations clearly in the UI as “Suggested Actions” or “Automated Insights.”
+
+========================================================================
+NOTICE AND DELIVERABLES FOR PART 2
+========================================================================
+
+Notice: If the code does not compile and run across both your frontend and API layers, no marks will be awarded for any application functionality.
+
+Deliverables for Part 2
+
+• Full source code directory containing the API and client application. All stored on GitHub. A 5% penalty if no GitHub is used with an appropriate number of commits. Each project should be over 20 commits at least.
+• Include any Docker Files if included (It is suggested to use Docker and/or Docker Compose like you did in PROG7311).
+• An updated README.md file with explicit instructions on how to test the new queue and dictionary implementations (e.g. how to simulate a high-priority alert).
+• YouTube video demo or presentation, your lecturer will advise on this. Please consult the lecturer of the module on your campus.
+
+========================================================================
+PART 2 MARKING RUBRIC
+========================================================================
+
+MARKING CRITERIA: Main Menu Navigation and Active Pillar State (overall working of everything together)
+[30 Marks]
+
+Does not meet the required standard (0–8 Marks):
+• Navigation is broken, missing, or causes the application backend to crash during page switching.
+• Application does not include Part 1 works.
+
+Meets the required standard (9–16 Marks):
+• Navigation menu is present, but switching views drops state or introduces noticeable UI freezing.
+• Some of Part 1 work is included or does not work perfectly.
+
+Partially exceeds the required standard (17–20 Marks):
+• Menu functions well, providing smooth transitions between Part 1 and Part 2 views with minor state-tracking quirks.
+
+Greatly exceeds the required standard (21–30 Marks):
+• Flawless, asynchronous frontend routing that seamlessly preserves application states while shifting between telemetry modules.
+
+Feedback: [blank in supplied rubric]
+
+------------------------------------------------------------------------
+MARKING CRITERIA: Advanced Collections: Stacks and Queues
+[15 Marks]
+
+Does not meet the required standard (0–4 Marks):
+• FIFO queues, priority queues, or command stacks are completely missing.
+
+Meets the required standard (5–10 Marks):
+• Structures are present but misconfigured; high-priority alerts do not bypass the standard stream, or stack-undo crashes.
+
+Partially exceeds the required standard (11–14 Marks):
+• Solid use of Queue<T> for data ingestion, priority structures for critical alerts, or Stack<T> for manual command undo history.
+
+Greatly exceeds the required standard (15 Marks):
+• Exceptional streaming logic; priority queues ingest critical alerts seamlessly without latency, and the stack-based command history functions flawlessly.
+
+Feedback: [blank in supplied rubric]
+
+------------------------------------------------------------------------
+MARKING CRITERIA: Lookup Structures: Dictionaries and Key-Value Maps
+[15 Marks]
+
+Does not meet the required standard (0–4 Marks):
+• Fast lookup maps are absent; application relies on slow, nested loops to search for active devices.
+
+Meets the required standard (5–10 Marks):
+• Dictionaries are used, but keys are poorly designed, causing hash collisions, or timelines fail to sort correctly.
+
+Partially exceeds the required standard (11–14 Marks):
+• Dictionary<TKey, TValue> provides O(1) device lookups via MAC addresses; or sorted dictionaries maintain order on timeline graphs.
+
+Greatly exceeds the required standard (15 Marks):
+• Seamless integration; device caching is instantaneous via dictionaries, and timelines load instantly via highly optimised sorted structures.
+
+Feedback: [blank in supplied rubric]
+
+------------------------------------------------------------------------
+MARKING CRITERIA: Unique Collections: Sets
+[10 Marks]
+
+Does not meet the required standard (0–3 Marks):
+• Sets are omitted, leading to duplicate alert processing.
+
+Meets the required standard (4–6 Marks):
+• Sets are present but utilised incorrectly, or duplicate warnings leak through to the interface.
+
+Partially exceeds the required standard (7–8 Marks):
+• Good use of HashSet<T> to maintain unique tracking of disconnected nodes or hardware warnings.
+
+Greatly exceeds the required standard (9–10 Marks):
+• Unique tracking lists are perfectly optimised; the set prevents duplicate overhead, showcasing advanced algorithmic mastery.
+
+Feedback: [blank in supplied rubric]
+
+------------------------------------------------------------------------
+MARKING CRITERIA: Predictive Action and Suggestion Engine
+[30 Marks]
+
+Does not meet the required standard (0–8 Marks):
+• The suggestion engine is completely absent, non-functional, or omitted.
+
+Meets the required standard (9–16 Marks):
+• Engine is present, but predictions appear random, disconnected from user search history, or cause performance drops.
+
+Partially exceeds the required standard (17–20 Marks):
+• The system successfully tracks user query history, identifying patterns and outputting correct automated dashboard recommendations.
+
+Greatly exceeds the required standard (21–30 Marks):
+• Highly sophisticated analysis engine that intelligently anticipates operational actions, serving clean, real-time proactive alerts and makes use of the data structure to its fullest.
+
+Feedback: [blank in supplied rubric]
+
+------------------------------------------------------------------------
+GITHUB DEDUCTION: Incorrect GitHub used or not GitHub Used
+[-5 Marks]
+
+Does not meet the required standard (-5 Marks):
+• No GitHub repository submitted.
+
+Meets the required standard (-4 or -3 Marks):
+• GitHub repository submitted with limited commit history and limited evidence of collaboration.
+• No README.md file included.
+
+Partially exceeds the required standard (-2 or -1 Marks):
+• GitHub repository submitted with good commit history (25 commits).
+• Evidence of collaboration (multiple contributors).
+• README.md file included but not formatted in Markdown.
+
+Greatly exceeds the required standard (No deduction):
+• GitHub repository submitted with excellent commit history (25+ commits and well-structured commit messages).
+• Evidence of collaboration (multiple contributors).
+• README.md file included and perfectly formatted in Markdown.
+
+Feedback: [blank in supplied rubric]
+
+------------------------------------------------------------------------
+PART 2 TOTAL: /100
+
+Notes to Students: [blank in supplied rubric]
+
+© The Independent Institute of Education (Pty) Ltd 2026
+Source document page markings visible: Page 22 of 30; Page 23 of 30; rubric header 25;26; 2026.

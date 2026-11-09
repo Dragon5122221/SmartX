@@ -1,0 +1,4 @@
+PASS: Desktop 1440x1000 and mobile 390x844.
+PASS: No horizontal overflow on tested mobile pages.
+PASS: Registration, editing, search, typed ingestion/history, power comparison, encrypted upload/download byte equality, issue reporting/resolution, recursive tree validation/save, simulation controls, view pause.
+PASS: No JavaScript page errors.

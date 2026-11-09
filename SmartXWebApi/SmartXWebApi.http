@@ -1,0 +1,28 @@
+@host = https://localhost:7034
+
+### Confirm availability
+GET {{host}}/api/health
+
+### Read a bounded operational snapshot
+GET {{host}}/api/dashboard
+
+### Create a manual temperature sensor
+POST {{host}}/api/sensors
+Content-Type: application/json
+
+{"id":"DEMO-TEMP-01","name":"Demo canopy sensor","locationId":"zone-a","category":"Environmental","intervalSeconds":3}
+
+### Send a typed reading; update timestamp to now and increase sequence on subsequent requests
+POST {{host}}/api/telemetry/float
+Content-Type: application/json
+
+{"batches":[[{"sensorId":"DEMO-TEMP-01","timestamp":"{{$datetime iso8601}}","sequence":1,"value":24.5}]]}
+
+### Demonstrate overloaded power arithmetic
+POST {{host}}/api/telemetry/power-comparison
+Content-Type: application/json
+
+{"leftSensorId":"SX-0002","rightSensorId":"SX-0005"}
+
+### Inspect recursive deployment input
+GET {{host}}/api/deployment

@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="SmartXMVC/SmartXMVC.csproj" />
+  <Project Path="SmartXWebApi/SmartXWebApi.csproj" />
+  <Project Path="SmartX.Shared/SmartX.Shared.csproj" />
+  <Project Path="SmartX.Core/SmartX.Core.csproj" />
+  <Project Path="SmartX.Verification/SmartX.Verification.csproj" />
+</Solution>

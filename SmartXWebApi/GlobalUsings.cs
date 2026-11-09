@@ -1,0 +1,15 @@
+global using SmartX.Shared.Sensors;
+global using SmartX.Shared.Telemetry;
+global using SmartX.Shared.Deployment;
+global using SmartX.Shared.Dashboard;
+global using SmartX.Shared.Validation;
+global using SmartX.Shared.Simulation;
+global using SmartX.Shared.Contracts.Sensors;
+global using SmartX.Shared.Contracts.Telemetry;
+global using SmartX.Shared.Contracts.Dashboard;
+global using SmartX.Shared.Contracts.Simulation;
+global using SmartX.Core.DataStructures;
+global using SmartX.Core.Services;
+global using SmartX.Core.Validation;
+global using SmartXWebApi.Services;
+global using Microsoft.AspNetCore.Mvc;

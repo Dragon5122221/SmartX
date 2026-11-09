@@ -1,0 +1,13 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  SmartX.Shared -> /workspace/scratch/7fd1084ef134/work/SmartX_Part1_Implementation/SmartX/SmartX.Shared/bin/Debug/net10.0/SmartX.Shared.dll
+  SmartX.Core -> /workspace/scratch/7fd1084ef134/work/SmartX_Part1_Implementation/SmartX/SmartX.Core/bin/Debug/net10.0/SmartX.Core.dll
+  SmartXWebApi -> /workspace/scratch/7fd1084ef134/work/SmartX_Part1_Implementation/SmartX/SmartXWebApi/bin/Debug/net10.0/SmartXWebApi.dll
+  SmartX.Verification -> /workspace/scratch/7fd1084ef134/work/SmartX_Part1_Implementation/SmartX/SmartX.Verification/bin/Debug/net10.0/SmartX.Verification.dll
+  SmartXMVC -> /workspace/scratch/7fd1084ef134/work/SmartX_Part1_Implementation/SmartX/SmartXMVC/bin/Debug/net10.0/SmartXMVC.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:16.52

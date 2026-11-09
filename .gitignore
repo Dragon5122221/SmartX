@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+.vs/
+**/.vs/
+*.user
+*.suo
+**/App_Data/
+.env
+*.pfx
+*.key

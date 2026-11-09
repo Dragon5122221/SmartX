@@ -1,0 +1,26 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: SmartXWebApi/Dockerfile
+    ports:
+      - "127.0.0.1:5267:5267"
+    environment:
+      SmartX__SimulationApiUrl: http://127.0.0.1:5267
+      SmartX__StoragePath: /app/App_Data/Attachments
+    volumes:
+      - attachments:/app/App_Data
+      - api-keys:/root/.aspnet/DataProtection-Keys
+  client:
+    build:
+      context: .
+      dockerfile: SmartXMVC/Dockerfile
+    ports:
+      - "127.0.0.1:5080:5080"
+    environment:
+      SmartXApi__BaseUrl: http://api:5267/
+    depends_on:
+      - api
+volumes:
+  attachments:
+  api-keys:

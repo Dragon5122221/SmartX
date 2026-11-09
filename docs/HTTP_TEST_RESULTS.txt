@@ -1,0 +1,22 @@
+PASS: Live API health
+PASS: MVC-to-API dashboard request with seeded fleet
+PASS: Razor page Home
+PASS: Razor page Dashboard
+PASS: Razor page Sensors
+PASS: Razor page Sensors/Create
+PASS: Razor page Sensors/Edit/SX-0001
+PASS: Razor page Sensors/Details/SX-0001
+PASS: Razor page Telemetry
+PASS: Razor page Telemetry/History/SX-0001
+PASS: Razor page Deployment
+PASS: Razor page Issues
+PASS: MVC mutation rejects missing anti-forgery token
+PASS: HTTP sensor registration
+PASS: Duplicate registration returns 409
+PASS: Typed float HTTP contract accepts JSON
+PASS: Fractional value cannot bind to integer packet
+PASS: Recursive validation route returns structured result
+PASS: Missing sensor returns 404
+PASS: Concurrent dashboard snapshots remain coherent
+PASS: Background simulation generates ongoing typed data
+PASS: Mixed scenario detects real sensor silence and creates alerts

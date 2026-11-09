@@ -1,0 +1,18 @@
+PASS: simulator crosses HTTP FIFO ingress
+PASS: MVC route /
+PASS: MVC route /Stream
+PASS: MVC route /Dashboard
+PASS: MVC route /Sensors
+PASS: MVC route /Telemetry
+PASS: MVC route /Deployment
+PASS: MVC route /Issues
+PASS: MVC route /Topology
+PASS: same-origin proxy reaches API
+PASS: CSRF token required for mutation
+PASS: confirmed override reaches API
+PASS: HTTP undo restores automatic mode
+HTTP SMOKE COMPLETE
+PASS: confirmed command and undo
+PASS: async routes, back/forward, search and draft preservation
+PASS: real HTTP spike and trend experiment with forecast
+PASS: mobile containment and no uncaught browser errors

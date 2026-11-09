@@ -1,0 +1,11 @@
+  SmartX.Shared -> <solution>/SmartX.Shared/bin/Debug/net10.0/SmartX.Shared.dll
+  SmartX.Core -> <solution>/SmartX.Core/bin/Debug/net10.0/SmartX.Core.dll
+  SmartXWebApi -> <solution>/SmartXWebApi/bin/Debug/net10.0/SmartXWebApi.dll
+  SmartX.Verification -> <solution>/SmartX.Verification/bin/Debug/net10.0/SmartX.Verification.dll
+  SmartXMVC -> <solution>/SmartXMVC/bin/Debug/net10.0/SmartXMVC.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:07.01

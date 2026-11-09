@@ -1,0 +1,42 @@
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+@{ var tokens = Antiforgery.GetAndStoreTokens(Context); var workspacePage = ViewData["Page"]?.ToString() ?? "home"; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="@tokens.RequestToken" />
+    <title>@ViewData["Title"] · Smart-X</title>
+    <link rel="stylesheet" href="~/css/smartx.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/stream.css" asp-append-version="true" />
+</head>
+<body data-page="@workspacePage">
+<a class="skip" href="#workspace">Skip to workspace</a>
+<aside class="rail">
+    <a class="brand" href="/"><span class="brand-mark">X</span><span>SMART<span class="muted">—</span>X<small>EDGE INTELLIGENCE</small></span></a>
+    <div class="rail-caption">GATEWAY / 01</div>
+    <nav aria-label="Main navigation">
+        <a href="/" data-nav="home"><span>⌂</span> Gateway</a>
+        <a href="/Dashboard" data-nav="dashboard"><span>◈</span> Operations</a>
+        <a href="/Stream" data-nav="stream"><span>⇄</span> Command stream</a>
+        <a href="/Topology" data-nav="topology"><span>⌘</span> Network topology</a>
+        <a href="/Sensors" data-nav="sensors"><span>▦</span> Sensor registry</a>
+        <a href="/Telemetry" data-nav="telemetry"><span>↗</span> Ingestion lab</a>
+        <a href="/Deployment" data-nav="deployment"><span>⌘</span> Deployment</a>
+        <a href="/Issues" data-nav="issues"><span>≡</span> Issue journal</a>
+    </nav>
+    <div class="rail-caption later">ROADMAP</div>
+    
+    <div class="future"><span>Mesh routing</span><small>FINAL PoE</small></div>
+    <div class="rail-bottom"><span class="dot"></span> RIVONIA RESEARCH SITE<small>Johannesburg, South Africa<br />Simulated IoT environment</small></div>
+</aside>
+<div class="shell">
+    <header class="topbar"><span><span class="muted">WORKSPACE</span><b>/</b> @ViewData["Title"]</span><div class="top-status"><span id="connection" class="status waiting">Connecting</span><time id="clock">UTC</time></div></header>
+    <main id="workspace">@RenderBody()</main>
+    <footer><span>SMART-X / REAL-TIME OPERATIONS</span><span>PROG7312 · PART 02</span></footer>
+</div>
+<div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+<script src="~/js/smartx.js" asp-append-version="true"></script>
+<script src="~/js/stream.js" asp-append-version="true"></script>
+<script src="~/js/navigation.js" asp-append-version="true"></script>
+</body>
+</html>

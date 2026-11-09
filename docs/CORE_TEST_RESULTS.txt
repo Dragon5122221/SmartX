@@ -1,0 +1,26 @@
+PASS: Unequal jagged batches transfer to List in order, with input ownership protected
+PASS: Snapshots cannot mutate retained packets
+PASS: Custom ring evicts oldest whole batch and keeps counts coherent
+PASS: Overloaded watts aggregate and preserve signed delta
+PASS: Power operator rejects overflow
+PASS: Valid multi-tier deployment passes recursion
+PASS: Null root terminates safely
+PASS: Active-path cycle is rejected without stack overflow
+PASS: Duplicate IDs are detected independently of reference cycles
+PASS: Enabled descendant under disabled ancestor is rejected
+PASS: Excessive hierarchy depth returns a controlled error
+PASS: 1,200 seeded devices ingest 28,800 mixed typed packets through the real pipeline
+MEASURE: seed duration 32.84 ms; managed memory 9,787,600 bytes
+PASS: Float value round-trips unchanged
+PASS: Duplicate sequence cannot overwrite history
+PASS: Wrong typed route rejects a sensor payload
+PASS: Non-finite telemetry is rejected
+PASS: Required List-backed issue reporting and resolution work
+PASS: Multi-record encrypted upload decrypts byte-for-byte
+PASS: Protected key and metadata survive a storage restart
+PASS: Persisted payload is ciphertext
+PASS: Tampered ciphertext is rejected before download bytes are released
+PASS: Missing authenticated terminal record is rejected as a truncated upload
+PASS: Attachments cannot be downloaded through a different sensor
+PASS: Empty upload is rejected and partial output cleaned up
+SUCCESS: 24 checks passed.
